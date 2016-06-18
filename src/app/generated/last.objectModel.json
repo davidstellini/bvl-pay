@@ -76,6 +76,104 @@
 		"isDepEntity": true
 	},
 	{
+		"name": "apiFee",
+		"properties": [
+			{
+				"title": "Fixed",
+				"readOnly": false,
+				"type": "apiMoney",
+				"isDepEntity": true,
+				"name": "fixed"
+			}
+		],
+		"isDepEntity": false,
+		"operations": {
+			"crud": {
+				"create": "https://api.fundsrouter.com/fees",
+				"find": "https://api.fundsrouter.com/fees/{{id}}/",
+				"findAll": "https://api.fundsrouter.com/fees",
+				"update": "https://api.fundsrouter.com/fees/{{id}}/",
+				"delete": "https://api.fundsrouter.com/fees/{{id}}/"
+			},
+			"custom": {}
+		}
+	},
+	{
+		"name": "apiAccount",
+		"properties": [
+			{
+				"title": "Balance",
+				"readOnly": true,
+				"type": "apiMoney",
+				"isDepEntity": true,
+				"name": "balance"
+			},
+			{
+				"title": "Currency",
+				"readOnly": false,
+				"type": "string",
+				"name": "currency"
+			},
+			{
+				"title": "Account number",
+				"readOnly": true,
+				"type": "string",
+				"name": "accountNumber"
+			},
+			{
+				"title": "Created on",
+				"readOnly": true,
+				"type": "string",
+				"format": "date-time",
+				"name": "createdOn"
+			},
+			{
+				"title": "Friendly name",
+				"readOnly": false,
+				"type": "string",
+				"name": "friendlyName"
+			},
+			{
+				"title": "Account entries",
+				"readOnly": true,
+				"type": "string",
+				"format": "uri",
+				"isResource": true,
+				"name": "accountEntries"
+			},
+			{
+				"title": "Account permissions",
+				"readOnly": true,
+				"type": "string",
+				"format": "uri",
+				"isResource": true,
+				"name": "accountPermissions"
+			}
+		],
+		"isDepEntity": false,
+		"operations": {
+			"crud": {
+				"create": "https://api.fundsrouter.com/accounts",
+				"find": "https://api.fundsrouter.com/accounts/{{id}}/",
+				"findAll": "https://api.fundsrouter.com/accounts",
+				"update": "https://api.fundsrouter.com/accounts/{{id}}/",
+				"delete": "https://api.fundsrouter.com/accounts/{{id}}/"
+			},
+			"custom": {
+				"getAccountEntries": {
+					"url": "https://api.fundsrouter.com/accountentries/{{accountEntries}}",
+					"model": "apiAccountEntry",
+					"isList": true
+				},
+				"getAccountPermissions": {
+					"url": "https://api.fundsrouter.com/accountpermissions/{{accountPermissions}}",
+					"model": "apiAccountPermission",
+					"isList": true
+				}
+			}
+		}
+	},
+	{
 		"name": "apiAccountPermission",
 		"properties": [
 			{
@@ -201,104 +299,6 @@
 					"isList": true
 				}
 			}
-		}
-	},
-	{
-		"name": "apiAccount",
-		"properties": [
-			{
-				"title": "Balance",
-				"readOnly": true,
-				"type": "apiMoney",
-				"isDepEntity": true,
-				"name": "balance"
-			},
-			{
-				"title": "Currency",
-				"readOnly": false,
-				"type": "string",
-				"name": "currency"
-			},
-			{
-				"title": "Account number",
-				"readOnly": true,
-				"type": "string",
-				"name": "accountNumber"
-			},
-			{
-				"title": "Created on",
-				"readOnly": true,
-				"type": "string",
-				"format": "date-time",
-				"name": "createdOn"
-			},
-			{
-				"title": "Friendly name",
-				"readOnly": false,
-				"type": "string",
-				"name": "friendlyName"
-			},
-			{
-				"title": "Account entries",
-				"readOnly": true,
-				"type": "string",
-				"format": "uri",
-				"isResource": true,
-				"name": "accountEntries"
-			},
-			{
-				"title": "Account permissions",
-				"readOnly": true,
-				"type": "string",
-				"format": "uri",
-				"isResource": true,
-				"name": "accountPermissions"
-			}
-		],
-		"isDepEntity": false,
-		"operations": {
-			"crud": {
-				"create": "https://api.fundsrouter.com/accounts",
-				"find": "https://api.fundsrouter.com/accounts/{{id}}/",
-				"findAll": "https://api.fundsrouter.com/accounts",
-				"update": "https://api.fundsrouter.com/accounts/{{id}}/",
-				"delete": "https://api.fundsrouter.com/accounts/{{id}}/"
-			},
-			"custom": {
-				"getAccountEntries": {
-					"url": "https://api.fundsrouter.com/accountentries/{{accountEntries}}",
-					"model": "apiAccountEntry",
-					"isList": true
-				},
-				"getAccountPermissions": {
-					"url": "https://api.fundsrouter.com/accountpermissions/{{accountPermissions}}",
-					"model": "apiAccountPermission",
-					"isList": true
-				}
-			}
-		}
-	},
-	{
-		"name": "apiFee",
-		"properties": [
-			{
-				"title": "Fixed",
-				"readOnly": false,
-				"type": "apiMoney",
-				"isDepEntity": true,
-				"name": "fixed"
-			}
-		],
-		"isDepEntity": false,
-		"operations": {
-			"crud": {
-				"create": "https://api.fundsrouter.com/fees",
-				"find": "https://api.fundsrouter.com/fees/{{id}}/",
-				"findAll": "https://api.fundsrouter.com/fees",
-				"update": "https://api.fundsrouter.com/fees/{{id}}/",
-				"delete": "https://api.fundsrouter.com/fees/{{id}}/"
-			},
-			"custom": {}
 		}
 	}
 ]

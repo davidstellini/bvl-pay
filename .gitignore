@@ -1,6 +1,7 @@
 # Logs
 logs
 *.log
+tempCompile
 
 # Runtime data
 pids
