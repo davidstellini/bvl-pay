@@ -1,3 +1,5 @@
+![Travis](https://travis-ci.org/davidstellini/bvl-pay.svg?branch=master)
+
 Sample project calling a SPRING API using ts-cruddie.
 
 Tech: Angular2 + Webpack + Material, thanks to:
