@@ -9,6 +9,10 @@
     "noEmitHelpers": true,
     "outDir": "tempCompile"
   },
+  "exclude": [
+     "node_modules",
+     "bower_components"
+   ],
   "filesGlob": [
     "./src/app/**/*.ts",
     "./src/platform/**/*.ts",
@@ -66,6 +70,9 @@
     "./src/app/generated/spec/services/apiAccountRule.spec.ts",
     "./src/app/generated/spec/services/apiFee.e2e.spec.ts",
     "./src/app/generated/spec/services/apiFee.spec.ts",
+    "./src/app/generated/typings/globals/inversify-dts/index.d.ts",
+    "./src/app/generated/typings/globals/node/index.d.ts",
+    "./src/app/generated/typings/index.d.ts",
     "./src/app/home/home.component.ts",
     "./src/app/home/home.e2e.ts",
     "./src/app/home/home.spec.ts",
