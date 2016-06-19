@@ -2,11 +2,12 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { RouteConfig, Router } from '@angular/router-deprecated';
-
 import { AppState } from './app.service';
 import { Home } from './home';
 import { RouterActive } from './router-active';
+import { AuthService } from './services';
+import { Router, Routes , ROUTER_DIRECTIVES, ROUTER_PROVIDERS, RouteConfig } from '@angular/router'
+
 
 /*
  * App Component
@@ -23,32 +24,7 @@ import { RouterActive } from './router-active';
     require('./app.css')
   ],
   template: `
-    <md-content>
-      <md-toolbar color="primary">
-          <span>{{ name }}</span>
-          <span class="fill"></span>
-          <button md-button router-active [routerLink]=" ['Index'] ">
-            Index
-          </button>
-          <button md-button router-active [routerLink]=" ['Home'] ">
-            Home
-          </button>
-          <button md-button router-active [routerLink]=" ['About'] ">
-            About
-          </button>
-      </md-toolbar>
-
-      <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
-
       <router-outlet></router-outlet>
-
-      <pre class="app-state">this.appState.state = {{ appState.state | json }}</pre>
-
-      <footer>
-        <img [src]="angularclassLogo" width="6%">
-        <span id="footerText">WebPack Angular 2 Starter by <a [href]="url">@AngularClass</a></span>
-      </footer>
-      </md-content>
   `
 })
 @RouteConfig([
