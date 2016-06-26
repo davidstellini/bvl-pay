@@ -1,4 +1,5 @@
-![Travis](https://travis-ci.org/davidstellini/bvl-pay.svg?branch=master)
+[![Travis](https://travis-ci.org/davidstellini/bvl-pay.svg?branch=master)](https://travis-ci.org/davidstellini/bvl-pay)
+
 
 Sample project calling a SPRING API using ts-cruddie.
 
