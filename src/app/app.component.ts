@@ -2,11 +2,12 @@
  * Angular 2 decorators and services
  */
 import { Component, ViewEncapsulation } from '@angular/core';
-import { RouteConfig, Router } from '@angular/router-deprecated';
-
 import { Home } from './home';
-import { RouterActive } from './router-active';
+import { AuthService } from './services';
 import { loginComponent } from './login/login.component';
+import { RouterConfig, ROUTER_DIRECTIVES } from '@angular/router'
+
+
 /*
  * App Component
  * Top Level Component
@@ -15,7 +16,7 @@ import { loginComponent } from './login/login.component';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
+  directives: [ ROUTER_DIRECTIVES ],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
@@ -26,31 +27,15 @@ import { loginComponent } from './login/login.component';
       <md-toolbar color="primary">
           <span>{{ name }}</span>
           <span class="fill"></span>
-          <button md-button router-active [routerLink]=" ['Home'] ">
-            Home
-          </button>
-          <button md-button router-active [routerLink]=" ['About'] ">
-            About
-          </button>
-          <button md-button router-active [routerLink]=" ['Login'] ">
-            Login
-          </button>
-      </md-toolbar>
 
-      <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
+      </md-toolbar>
 
       <router-outlet></router-outlet>
 
       </md-content>
   `
 })
-@RouteConfig([
-  { path: '',      name: 'Index', component: Home, useAsDefault: true },
-  { path: 'home',  name: 'Home',  component: Home },
-  { path: 'login', name: 'Login',  component: loginComponent },
-  // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-  { path: 'about', name: 'About', loader: () => require('es6-promise!./about')('About') }
-])
+
 export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   loading = false;
@@ -61,15 +46,14 @@ export class App {
 
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }
 
-/*
- * Please review the https://github.com/AngularClass/angular2-examples/ repo for
- * more angular app examples that you may copy/paste
- * (The examples may not be updated as quickly. Please open an issue on github for us to update it)
- * For help or questions please contact us at @AngularClass on twitter
- * or our chat on Slack at https://AngularClass.com/slack-join
- */
+//Routes:
+export const routes : RouterConfig = [
+  { path: 'home',  component: Home },
+  { path: 'login', component: loginComponent },
+  { path: 'app', component: App }
+  // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
+];
