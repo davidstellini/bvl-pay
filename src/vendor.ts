@@ -31,6 +31,9 @@ import '@angular2-material/tabs';
 import '@angular2-material/toolbar';
 // look in src/platform/angular2-material2 and src/platform/providers
 
+//Loading bar:
+import 'ng2-slim-loading-bar';
+
 if ('production' === ENV) {
   // Production
 

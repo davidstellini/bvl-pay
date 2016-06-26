@@ -7,6 +7,7 @@ import { AuthService } from './services';
 import { loginComponent } from './login/login.component';
 import { RouterConfig, ROUTER_DIRECTIVES } from '@angular/router'
 
+import { SlimLoadingBar } from 'ng2-slim-loading-bar';
 
 /*
  * App Component
@@ -16,7 +17,7 @@ import { RouterConfig, ROUTER_DIRECTIVES } from '@angular/router'
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ ROUTER_DIRECTIVES ],
+  directives: [ SlimLoadingBar],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
@@ -25,12 +26,20 @@ import { RouterConfig, ROUTER_DIRECTIVES } from '@angular/router'
   template: `
     <md-content>
       <md-toolbar color="primary">
+          <ng2-slim-loading-bar></ng2-slim-loading-bar>
           <span>{{ name }}</span>
           <span class="fill"></span>
 
+          <a md-button [routerLink]="['/home']">
+            Home
+          </a>
+          <a md-button [routerLink]="['/login']">
+            Login
+          </a>
       </md-toolbar>
 
       <router-outlet></router-outlet>
+
 
       </md-content>
   `
@@ -49,11 +58,3 @@ export class App {
   ngOnInit() {}
 
 }
-
-//Routes:
-export const routes : RouterConfig = [
-  { path: 'home',  component: Home },
-  { path: 'login', component: loginComponent },
-  { path: 'app', component: App }
-  // Async load a component using Webpack's require with es6-promise-loader and webpack `require`
-];
