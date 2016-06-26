@@ -17,7 +17,8 @@ import { MdToolbar } from '@angular2-material/toolbar';
  */
 
  import { FlexDirective } from '../../../app/ng2-material-helper/flex.directive';
- import { LayoutDirective, LayoutAlignDirective } from '../../../app/ng2-material-helper/layout.directive';
+ import { LayoutDirective,
+    LayoutAlignDirective } from '../../../app/ng2-material-helper/layout.directive';
 
 export const MATERIAL_PIPES = [
 

@@ -1,7 +1,7 @@
 import { RouterConfig }          from '@angular/router';
 import { Home }     from './home.component';
 
-export const homeRoutes : RouterConfig = [
+export const homeRoutes: RouterConfig = [
   { path: 'home',  component: Home },
   { path: '', redirectTo : '/home', terminal : true }
 ];

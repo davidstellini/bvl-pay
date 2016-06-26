@@ -5,7 +5,7 @@ export class AuthService {
 
   constructor() { }
 
-  makeLogin(username : string, password : string) : Promise<any> {
+  makeLogin(username: string, password: string): Promise<any> {
     return null;
   }
 

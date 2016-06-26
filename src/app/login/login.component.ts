@@ -6,9 +6,9 @@ import { AuthService } from '../services/authService';
 @Component({
   selector: 'login',
   template: require('./login.component.html'),
-  styles: [require('./login.styles.css')],
+  styles: [require('./login.styles.css')]
 })
-export class loginComponent implements OnInit {
+export class LoginComponent implements OnInit {
    loginForm: ControlGroup;
   constructor( private builder: FormBuilder, public authService: AuthService) {
     this.loginForm = this.builder.group({
@@ -18,10 +18,10 @@ export class loginComponent implements OnInit {
   }
 
 
-  login(username : string, password : string) {
+  login(username: string, password: string) {
     this.authService.makeLogin(username, password);
   }
-  
+
   ngOnInit() {
 
   }

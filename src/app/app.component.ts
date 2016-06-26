@@ -4,8 +4,8 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { Home } from './home';
 import { AuthService } from './services';
-import { loginComponent } from './login/login.component';
-import { RouterConfig, ROUTER_DIRECTIVES } from '@angular/router'
+import { LoginComponent } from './login/login.component';
+import { RouterConfig, ROUTER_DIRECTIVES } from '@angular/router';
 
 import { SlimLoadingBar } from 'ng2-slim-loading-bar';
 
@@ -49,11 +49,8 @@ export class App {
   angularclassLogo = 'assets/img/angularclass-avatar.png';
   loading = false;
   name = 'BVLPay';
-  url = 'http://docs.fundsrouter.com/';
+  url = 'https://docs.fundsrouter.com/';
 
-  constructor() {
-
-  }
 
   ngOnInit() {}
 
