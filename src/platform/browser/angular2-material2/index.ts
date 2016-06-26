@@ -16,6 +16,9 @@ import { MdToolbar } from '@angular2-material/toolbar';
  * we are grouping the module so we only need to manage the imports in one location
  */
 
+ import { FlexDirective } from '../../../app/ng2-material-helper/flex.directive';
+ import { LayoutDirective, LayoutAlignDirective } from '../../../app/ng2-material-helper/layout.directive';
+
 export const MATERIAL_PIPES = [
 
 ];
@@ -31,7 +34,9 @@ export const MATERIAL_DIRECTIVES = [
     MdRadioButton,
     MdRadioGroup,
     MdSpinner,
-    MdToolbar
+    MdToolbar,
+    FlexDirective,
+    LayoutDirective, LayoutAlignDirective
   ],
   ...MD_CARD_DIRECTIVES,
   ...MD_GRID_LIST_DIRECTIVES,

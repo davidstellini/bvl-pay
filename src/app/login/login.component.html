@@ -1,0 +1,16 @@
+<div layout="row" layout-align="center">
+  <md-card style="flex : 1; max-width : 400px;">
+    <md-card-title>Login</md-card-title>
+    <form [ngFormModel]="loginForm" (ngSubmit)="login()" novalidate>
+      <md-card-content>
+        <md-input class="full-width" placeholder="email" type="email" ngControl="email"></md-input>
+        <md-input class="full-width" placeholder="password" type="password" ngControl="password"></md-input>
+      </md-card-content>
+      <md-card-actions align="end">
+        <button type="submit" md-raised-button color="accent" [disabled]="!loginForm.valid">
+          LOGIN
+          </button>
+      </md-card-actions>
+    </form>
+  </md-card>
+</div>

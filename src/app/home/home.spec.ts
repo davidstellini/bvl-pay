@@ -10,9 +10,7 @@ import { BaseRequestOptions, Http } from '@angular/http';
 import { MockBackend } from '@angular/http/testing';
 
 // Load the implementations that should be tested
-import { AppState } from '../app.service';
 import { Home } from './home.component';
-import { Title } from './title';
 
 describe('Home', () => {
   // provide our implementations or mocks to the dependency injector
@@ -27,8 +25,6 @@ describe('Home', () => {
       deps: [MockBackend, BaseRequestOptions]
     },
 
-    AppState,
-    Title,
     Home
   ]);
 
